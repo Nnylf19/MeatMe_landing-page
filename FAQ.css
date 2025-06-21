@@ -1,0 +1,105 @@
+/* Animation for Zooming FAQ Items */
+@keyframes zoomInOut {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* Animation for Fading and Sliding Content */
+@keyframes fadeInSlide {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.faq-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    font-family: 'Caveat', cursive; /* Apply Caveat font */
+    color: #ffffff; /* Set text color to white */
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add shadow to text */
+    animation: fadeInSlide 2s ease-in-out; /* Apply fade and slide animation */
+}
+
+.faq-page .contact-us h2 {
+    text-align: center;
+    color: #b22222;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add shadow to text */
+    background: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    display: inline-block;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow to the box */
+}
+
+.faq-page .faq-item {
+    margin-bottom: 20px;
+}
+
+.faq-page .faq-item h4 {
+    font-size: 1.5rem;
+    animation: zoomInOut 3s infinite ease-in-out; /* Apply zoom animation */
+    color: #b22222; /* Optional: Add a distinct color for the FAQ headings */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add shadow for better visibility */
+}
+
+.faq-page .faq-item p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #ffffff; /* Set text color to white */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add shadow to text */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .faq-page {
+        padding: 15px;
+    }
+
+    .faq-page .contact-us h2 {
+        font-size: 1.8rem;
+    }
+
+    .faq-page .faq-item h4 {
+        font-size: 1.2rem;
+    }
+
+    .faq-page .faq-item p {
+        font-size: 1rem;
+    }
+}
+
+/* Responsive Design for 320px */
+@media (max-width: 320px) {
+    .faq-page {
+        padding: 10px;
+        font-size: 0.9rem; /* Reduce font size for smaller screens */
+    }
+
+    .faq-page .contact-us h2 {
+        font-size: 1.5rem; /* Adjust heading size */
+        padding: 8px 15px; /* Reduce padding */
+    }
+
+    .faq-page .faq-item h4 {
+        font-size: 1.2rem; /* Adjust FAQ heading size */
+    }
+
+    .faq-page .faq-item p {
+        font-size: 0.9rem; /* Adjust paragraph font size */
+        line-height: 1.4; /* Adjust line height for better readability */
+    }
+}

@@ -1,0 +1,591 @@
+.container {    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    max-width: 100%;
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    position: relative;
+    top: -100px;
+    z-index: 1; /* Lower z-index to avoid overlapping the navigation bar */
+}
+
+/* Card Wrapper Styling */
+.card-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    justify-content: flex-start;
+    width: auto;
+    overflow-x: hidden;
+    padding: 20px;
+    box-sizing: border-box;
+    background: linear-gradient(135deg, #f9f9f9, #e6e6e6); /* Add a subtle gradient background */
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a soft shadow */
+}
+
+
+/* Card List Styling */
+.card-list {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Individual Card Styling */
+.card-item {
+    flex: 0 0 calc(15% - 10px); /* 3 items per row */
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.card-item:hover {
+    transform: scale(1.05);
+}
+
+/* Card Link Styling */
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    padding: 15px;
+    background: linear-gradient(135deg, #ffffff, #f7f7f7); /* Add a subtle gradient */
+    border-radius: 12px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Card Image Styling */
+.card-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px 12px 0 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow to the image */
+}
+
+/* Badge Styling */
+.badge {
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #ff5722;
+    padding: 6px 12px;
+    border-radius: 14px;
+    display: inline-block;
+    margin: 6px 0;
+}
+
+/* Card Title Styling */
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin: 10px 0;
+    text-align: center;
+}
+
+/* Price Styling */
+.price {
+    font-size: 1rem;
+    color: #b22222;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+/* Add to Cart Button Styling */
+.add-to-cart {
+    background-color: #b22222;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.add-to-cart:hover {
+    background-color: #e64a19;
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+
+/* Ensure Swiper container does not overlap the navigation bar */
+nav {
+    position: relative;
+    z-index: 10; /* Ensure navigation bar is above Swiper */
+}
+
+/* Swiper Container */
+.swiper {
+    width: 100%;
+    height: auto;
+    padding: 50px 60px; /* Increased side padding for arrows */
+    box-sizing: border-box;
+    position: relative;
+}
+
+.swiper-wrapper {
+    display: flex;
+    align-items: center;
+    transition-timing-function: linear;
+}
+
+.swiper-slide {
+    height: auto;
+    flex-shrink: 0;
+    width: calc(20% - 40px) !important;
+    opacity: 1 !important;
+    transition: transform 0.3s ease;
+}
+
+.products-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1400px;
+    margin: 100px auto 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* Product Styling */
+.product-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.product-item:hover {
+    transform: translateY(-5px);
+}
+
+.product-image {
+    width: 100%;
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+.product-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Ensure all products are visible */
+.product-item {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.product-item:hover {
+    transform: scale(1.05);
+}
+
+.product-item + .product-item {
+    margin-left: 10px; /* Adjust spacing */
+}
+
+.product-item h3 {
+    margin: 0 0 10px;
+    font-size: 1.2rem;
+}
+
+.product-item p {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.product-item span {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #222;
+}
+
+/* Product Link */
+.product-link {
+    display: block;
+    padding: 18px;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Product Image */
+.product-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.product-image .product-img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add shadow to the image */
+}
+
+/* Badge */
+.badge {
+    display: inline-block;
+    padding: 8px 16px;
+    background: #DDE4FF;
+    color: #5372F0;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border-radius: 50px;
+    margin: 16px 0;
+}
+
+/* Product Title */
+.product-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+/* Product Label */
+.product-label {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Product Name */
+.product-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff; /* White text for readability */
+    margin-bottom: 5px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Add shadow for better visibility */
+}
+
+/* Product Price */
+.product-price {
+    font-size: 1rem;
+    color: #f0f0f0; /* Light text color for readability */
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Add shadow for better visibility */
+}
+
+/* Product Quantity Input */
+.product-quantity {
+    width: 60px;
+    padding: 5px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8); /* Slightly opaque background for input */
+    color: #000; /* Black text for input field */
+    margin-bottom: 10px;
+}
+
+/* Add to Cart Button */
+.add-to-cart {
+    background-color: #b22222; /* Match the nav color */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.add-to-cart:hover {
+    background-color: #e64a19; /* Slightly lighter red on hover */
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+
+
+/* Total Amount */
+.total-amount {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #b22222;
+    margin-top: 20px;
+    background: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Payment Options */
+.payment-options {
+    margin-top: 20px;
+    padding: 20px;
+    background: transparent;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.payment-options h3 {
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 20px;
+}
+
+/* Payment Methods Container */
+.payment-methods {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Add space between payment boxes */
+    flex-wrap: wrap; /* Allow wrapping if the screen is too small */
+}
+
+/* Individual Payment Box */
+.payment-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    background-color: #b22222;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    width: 120px; /* Set a fixed width for consistency */
+    height: 150px; /* Set a fixed height for consistency */
+    overflow: hidden; /* Prevent content from overflowing */
+}
+
+/* Payment Box Hover Effect */
+.payment-box:hover {
+    background-color: #e64a19;
+    transform: scale(1.05);
+}
+
+/* Payment Icon */
+.payment-icon {
+    width: 50px; /* Set a fixed width for the icons */
+    height: 50px; /* Set a fixed height for the icons */
+    margin-bottom: 10px; /* Add space below the icon */
+    object-fit: contain; /* Ensure the image fits within the box without distortion */
+}
+
+/* Payment Box Text */
+.payment-box span {
+    font-size: 0.9rem;
+    color: #fff;
+    text-align: center;
+}
+
+.payment-options ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.payment-options ul li {
+    font-size: 1rem;
+    color: white;
+    margin: 5px 0;
+}
+
+/* Cart Section */
+.cart {
+    margin-top: 20px;
+    padding: 20px;
+    background: #fff; /* Add a white background for better visibility */
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    color: #000; /* Ensure text is readable */
+}
+
+.cart {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.cart h3 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.cart-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.total-amount {
+    font-size: 1.2em;
+    margin: 15px 0;
+    color: #333;
+}
+
+.checkout-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #b22222;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+}
+
+.checkout-btn:hover {
+    background-color: #8b0000;
+}
+
+.checkout-btn:active {
+    transform: scale(0.98);
+}
+
+/* Cart Heading */
+.cart h3 {
+    font-size: 1.5rem;
+    color: #b22222; /* Match the theme color */
+    margin-bottom: 20px;
+}
+
+/* Cart Items */
+#cartItems {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #333;
+}
+
+#cartItems p {
+    font-size: 1rem;
+    color: #333;
+    margin: 5px 0;
+}
+
+/* Navigation buttons */
+.swiper-button-next,
+.swiper-button-prev {
+    color: #b22222;
+    background: rgba(255, 255, 255, 0.9);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    font-size: 18px;
+}
+
+.swiper-button-next {
+    right: 0;
+}
+
+.swiper-button-prev {
+    left: 0;
+}
+
+/* Hover effect for navigation buttons */
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    background: rgba(178, 34, 34, 0.9);
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .swiper {
+        padding: 20px 50px;
+    }
+    
+    .swiper-button-next,
+    .swiper-button-prev {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .swiper-button-next:after,
+    .swiper-button-prev:after {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .swiper {
+        padding: 20px 40px;
+    }
+    
+    .swiper-button-next,
+    .swiper-button-prev {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .swiper-button-next:after,
+    .swiper-button-prev:after {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .swiper-slide {
+        width: calc(33.333% - 30px) !important;
+    }
+}
+
+@media (max-width: 640px) {
+    .swiper-slide {
+        width: calc(100% - 20px) !important;
+    }
+    
+    .swiper {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 320px) {
+    .swiper-slide {
+        width: calc(100% - 20px) !important;
+    }
+}

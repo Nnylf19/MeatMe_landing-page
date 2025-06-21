@@ -1,0 +1,364 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #4d0f0f;
+    color: white;
+    overflow-x: hidden;
+    position: relative;
+}
+
+
+main::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 60%;
+    width: 40%;
+    height: 150%;
+    background: white;
+    z-index: -1;
+    clip-path: path("M 0 0 Q 15% 30%, 50% 20% T 100% 40% L 100% 100% L 0 100% Z");
+    border-top-left-radius: 85% 85%;
+}
+
+
+header {
+    background-color: #3b0808;
+    padding: 5px;
+    font-size: small;
+    text-align: center;
+}
+
+
+nav {
+    background-color: #b22222;
+    padding: 10px 20px;
+    text-align: center;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+
+}
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 8px 16px;
+    border: 2px solid white;
+    border-radius: 10px;
+    transition: background 0.3s, transform 0.3s;
+    display: inline-block;
+    grid-area: 10px;
+}
+nav ul li a:hover {
+    background-color: white;
+    color: #b22222;
+    transform: scale(1.1);
+}
+
+
+main {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    padding-bottom: 80px;
+    position: relative;
+}
+
+
+.footer-container {
+    background-color: black;
+    color: white;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+
+.footer-top-middle {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: black;
+}
+
+
+.top-footer {
+    text-align: left;
+    flex: 1;
+}
+
+.top-footer p {
+    margin: 10px 0;
+}
+
+.middle-footer {
+    text-align: right;
+    flex: 1;
+    
+}
+
+
+.bottom-footer {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    background-color: #111;
+    padding: 10px 10px;
+
+}
+
+.bottom-footer p {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 10s linear infinite;
+}
+
+
+@keyframes marquee {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+
+@media (max-width: 1024px) {
+    main::before {
+        left: 55%;
+        width: 45%;
+        clip-path: path("M 0 0 Q 20% 35%, 55% 30% T 100% 45% L 100% 100% L 0 100% Z");
+    }
+}
+
+@media (max-width: 768px) {
+    /* Header */
+    header {
+        background-color: #3b0808;
+        padding: 10px;
+        font-size: 12px;
+        text-align: center;
+        width: 100%; /* Ensure header spans the full width */
+    }
+
+    /* Navigation */
+    nav {
+        position: relative;
+        top: 0;
+        width: 100%; /* Ensure navigation spans the full width */
+        padding: 10px 0;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: row; /* Keep items in a row */
+        justify-content: space-around; /* Distribute items evenly */
+        gap: 5px;
+        padding: 0;
+        list-style: none;
+        width: 100%; /* Ensure navigation items span the full width */
+    }
+
+    nav ul li {
+        flex: 1;
+        max-width: 20%; /* Adjust width for each item */
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 8px 10px;
+        font-size: 0.9rem;
+        text-align: center;
+        white-space: nowrap;
+        border-radius: 5px;
+    }
+
+    /* Main Content */
+    main {
+        font-size: 1rem;
+        margin: 0;
+        padding: 20px;
+        width: 100%; /* Ensure main content spans the full width */
+        height: calc(100vh - 150px); /* Adjust height to fill the screen minus header and footer */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+    }
+
+    main::before {
+        left: 50%;
+        width: 50%;
+        clip-path: path("M 0 0 Q 25% 40%, 60% 35% T 100% 50% L 100% 100% L 0 100% Z");
+    }
+
+    /* Footer */
+    .footer-container {
+        background-color: black;
+        color: white;
+        width: 100%; /* Ensure footer spans the full width */
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        padding: 10px 20px;
+        box-sizing: border-box;
+    }
+
+    .footer-top-middle {
+        flex-direction: column;
+        text-align: center;
+        font-size: 0.8rem;
+    }
+
+    .top-footer,
+    .middle-footer {
+        text-align: center;
+        flex: unset;
+        font-size: 0.8rem;
+    }
+
+    .bottom-footer {
+        font-size: 0.8rem;
+    }
+
+    /* Adjust marquee animation for smaller screens */
+    .bottom-footer p {
+        animation: marquee 15s linear infinite; /* Slow down the animation for readability */
+    }
+}
+
+@media (max-width: 320px) {
+    /* General Fix for All Sections */
+    #home-content1,
+    .products-page,
+    .about-us-content,
+    .container-contact-us,
+    .faq-page {
+        width: 100%; /* Ensure the section spans the full width */
+        margin: 0; /* Remove any margins */
+        padding: 0 10px; /* Add padding for spacing */
+        box-sizing: border-box; /* Include padding in width */
+    }
+
+    /* Header */
+    header {
+        background-color: #3b0808;
+        padding: 5px;
+        font-size: 10px; /* Reduce font size */
+        text-align: center;
+        width: 100%; /* Ensure header spans the full width */
+        margin: 0; /* Remove any margins */
+        box-sizing: border-box; /* Include padding in width */
+    }
+
+    /* Navigation */
+    nav {
+        text-align: left; /* Align navigation to the left */
+        padding: 5px; /* Reduce padding */
+        width: 100%; /* Ensure navigation spans the full width */
+        margin: 0; /* Remove any margins */
+        box-sizing: border-box; /* Include padding in width */
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start; /* Align items to the left */
+        gap: 10px; /* Reduce spacing between items */
+        padding: 0;
+        list-style: none;
+        width: 100%; /* Ensure navigation items span the full width */
+    }
+
+    nav ul li {
+        width: 100%; /* Make each item take full width */
+    }
+
+    nav ul li a {
+        display: block; /* Ensure links take full width */
+        padding: 5px 8px; /* Reduce padding */
+        font-size: 0.7rem; /* Reduce font size */
+        text-align: left; /* Align text to the left */
+        white-space: nowrap;
+        border-radius: 5px;
+        width: 100%; /* Ensure links span the full width */
+        box-sizing: border-box; /* Include padding in width */
+    }
+
+    nav ul li a:hover {
+        background-color: #ffffff;
+        color: #b22222;
+    }
+
+    /* Main Content */
+    main {
+        font-size: 0.8rem; /* Reduce font size */
+        margin: 0;
+        padding: 10px; /* Reduce padding */
+        width: 100%; /* Ensure main content spans the full width */
+        height: auto; /* Allow height to adjust dynamically */
+        display: flex;
+        flex-direction: column; /* Stack content vertically */
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box; /* Include padding in width */
+    }
+
+    main::before {
+        left: 0; /* Start from the left edge */
+        width: 100%; /* Ensure it spans the full width */
+        clip-path: path("M 0 0 Q 25% 40%, 60% 35% T 100% 50% L 100% 100% L 0 100% Z");
+    }
+
+    /* Footer */
+    .footer-container {
+        font-size: 0.6rem; /* Reduce font size */
+        padding: 5px; /* Reduce padding */
+        width: 100%; /* Ensure footer spans the full width */
+        margin: 0; /* Remove any margins */
+        box-sizing: border-box; /* Include padding in width */
+    }
+
+    .footer-top-middle {
+        flex-direction: column;
+        text-align: center;
+        font-size: 0.6rem; /* Reduce font size */
+        width: 100%; /* Ensure it spans the full width */
+    }
+
+    .top-footer,
+    .middle-footer {
+        text-align: center;
+        flex: unset;
+        font-size: 0.6rem; /* Reduce font size */
+        width: 100%; /* Ensure it spans the full width */
+    }
+
+    .bottom-footer {
+        font-size: 0.6rem; /* Reduce font size */
+        width: 100%; /* Ensure it spans the full width */
+    }
+
+    /* Adjust marquee animation for smaller screens */
+    .bottom-footer p {
+        animation: marquee 20s linear infinite; /* Slow down the animation for readability */
+        width: 100%; /* Ensure it spans the full width */
+    }
+}

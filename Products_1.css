@@ -1,0 +1,29 @@
+/* swiper-style.css */
+
+.swiper {
+  width: 100%;
+  max-width: 1000px;
+  padding: 40px 0;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #333;
+}

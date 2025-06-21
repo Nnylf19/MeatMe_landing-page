@@ -1,0 +1,48 @@
+.class-1 {
+        margin-bottom: 20px;
+        padding: 15px;
+        border-radius: 5px;
+    }
+
+    .class-2 {
+        color: white;
+        font-size: 20px;
+        animation: zoomInOut 3s infinite ease-in-out; /* Apply zoom animation */
+    }
+
+    .class-3 {
+        font-size: 16px;
+        line-height: 1.5;
+        color: white;
+    }
+
+    .container-contact-us {
+        padding: 20px;
+        border-radius: 10px;
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+        animation: fadeInSlide 2s ease-in-out; /* Apply fade and slide animation */
+    }
+
+    /* Animation for Zooming H3 Elements */
+    @keyframes zoomInOut {
+        0%, 100% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.1);
+        }
+    }
+
+    /* Animation for Fading and Sliding Content */
+    @keyframes fadeInSlide {
+        0% {
+            opacity: 0;
+            transform: translateX(-100%);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }

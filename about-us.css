@@ -1,0 +1,97 @@
+.about-us-content {
+    font-family: 'Arial', sans-serif;
+    color: #fcfcfc;
+    padding: 20px;
+    position: relative;
+    text-align: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 10px auto;
+    overflow-y: auto;
+    max-height: 90vh;
+    animation: fadeInSlide 2s ease-in-out; /* Apply fade and slide animation */
+}
+
+.about-us-content h2 {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.about-us-content p {
+    margin-bottom: 15px;
+    text-align: justify;
+    font-size: 1rem;
+    color: #ffffff;
+    line-height: 1.6;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.about-us-content strong {
+    color: #b22222;
+}
+
+.about-us-content img {
+    animation: zoomInOut 3s infinite ease-in-out; /* Apply zoom animation */
+}
+
+.logo-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.logo-small {
+    width: 300px;
+    height: auto;
+}
+
+/* Animation for Zooming Logo */
+@keyframes zoomInOut {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* Animation for Fading and Sliding Content */
+@keyframes fadeInSlide {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-us-content {
+        width: 90%;
+        padding: 15px;
+        max-height: 70vh;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+
+    .about-us-content h2 {
+        font-size: 1.2rem;
+    }
+
+    .about-us-content p {
+        font-size: 0.9rem;
+    }
+
+    .logo-small {
+        width: 200px;
+    }
+}

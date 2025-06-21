@@ -1,0 +1,352 @@
+/* Import Google Font "Lobster" */
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+/* Import Google Font "Fraunces" */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@400;700&display=swap');
+
+/* General Styles */
+#home-content1 {
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100%;
+    box-sizing: border-box;
+    margin-top: -5rem;
+}
+
+/* Prevent scrolling */
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* Heading & Text */
+.Greet {
+    position: relative;
+    top: -3rem;
+    margin-bottom: 0;
+    text-align: center;
+    font-family: 'Lobster', sans-serif;
+}
+
+.Enjoy {
+    font-size: 1.5rem;
+    font-weight: 200;
+    color: #fff;
+    text-shadow: 1px 1px 5px rgba(0, 0, 1, 1);
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+/* Apply Lobster font and animation */
+.lobster-regular {
+    font-family: "Lobster", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.8rem;
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    animation: fadeInSlide 2s ease-in-out;
+}
+
+/* Animation for text */
+@keyframes fadeInSlide {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Logo */
+.logo-container {
+    margin-top: 0.5rem;
+}
+
+.logo1_1 {
+    width: 100%;
+    max-width: 50rem;
+    height: auto;
+    margin-top: -1.5rem;
+    animation: glowingEffect 2s infinite; /* Apply glowing animation */
+}
+
+/* Layout & Promotions */
+.container-1 {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 200%;
+    max-width: 68.75rem;
+    margin: 0 auto;
+    gap: 0.625rem;
+    right: 5%;
+    margin-top: 2.8rem;
+}
+
+/* Promo Container */
+.promo-container {
+    position: relative;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 40rem;
+    text-align: center;
+    padding: 0.625rem;
+    font-family: "Fraunces", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "SOFT" 0, "WONK" 0;
+    color: #fff;
+    overflow: hidden; /* Hide overflowing text */
+    height: auto; /* Adjust height to fit all promo messages */
+}
+
+/* Promo Text */
+.promo {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #fff;
+    padding: 0.625rem;
+    border-radius: 0.625rem;
+    margin: 0.5rem 0; /* Add spacing between promo messages */
+    text-align: center;
+        opacity: 0; /* Start with faded text */
+    transform: translateX(-100%); /* Start off-screen to the left */
+    animation: slideIn 1.5s ease-out forwards; /* Apply animation */
+}
+
+/* Keyframes for sliding in and fading */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%); /* Start off-screen */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0); /* End at its original position */
+    }
+}
+
+/* Keyframes for glowing effect */
+@keyframes glowingEffect {
+    0% {
+        filter: drop-shadow(0 0 5px #fff) drop-shadow(0 0 10px #fff) drop-shadow(0 0 20px #ff5722);
+    }
+    50% {
+        filter: drop-shadow(0 0 10px #fff) drop-shadow(0 0 20px #ff5722) drop-shadow(0 0 30px #ff5722);
+    }
+    100% {
+        filter: drop-shadow(0 0 5px #fff) drop-shadow(0 0 10px #fff) drop-shadow(0 0 20px #ff5722);
+    }
+}
+
+/* Specific timing for each promo */
+.promo:nth-child(1) {
+    animation-delay: 0s; /* First promo starts immediately */
+}
+
+.promo:nth-child(2) {
+    animation-delay: 0.5s; /* Second promo starts after 0.5 seconds */
+}
+
+.promo:nth-child(3) {
+    animation-delay: 1s; /* Third promo starts after 1 second */
+}
+
+/* Meat Image */
+.meatinboard {
+    position: fixed;
+    top: 65%;
+    left: 66%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    width: 37.5rem;
+    pointer-events: none;
+    animation: zoomInOut 3s infinite ease-in-out; /* Apply zoom animation */
+}
+
+/* Keyframes for zooming in and out */
+@keyframes zoomInOut {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1); /* Normal size */
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.1); /* Zoomed in */
+    }
+}
+
+/* Image Container */
+.image-container1 {
+    flex: 1;
+    text-align: right;
+}
+
+.front-image {
+    width: 110%;
+    max-width: 31.25rem;
+    height: auto;
+    filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.3));
+    margin-top: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #home-content1 {
+        position: relative;
+        text-align: center;
+        padding: 0 1rem;
+        max-width: 100%;
+        margin: 3px;
+        height: 100%;
+        justify-content: space-around;
+        margin-top: -5%; /* Reduced margin to move content up */
+    }
+
+    .Enjoy {
+        font-size: 0.7rem;
+        text-align: center;
+        margin-top: 0;
+    }
+
+    .logo1_1 {
+        max-width: 20rem;
+        /* Removed margin-top to eliminate space above the logo */
+    }
+
+    .logo-container {
+        margin-top: 0; /* Remove any unnecessary margin from the container */
+        margin-bottom: 0; /* Add this to control space below the logo */
+    }
+
+    /* Stack promo and image-container1 vertically */
+    .container-1 {
+        display: flex;
+        flex-direction: column; /* Stack items on top of each other */
+        align-items: center; /* Center align */
+        justify-content: center;
+        width: 100%;
+        text-align: center;
+        gap: 10px; /* Adds space between items */
+        margin-top: -25%; /* Reduced margin to move content up */
+    }
+
+    .container-1 .promo-container .promo{
+        margin-top: 1px;
+        margin-bottom: 1px;
+    }
+
+    /* Promo container centered */
+    .promo-container {
+        width: 100%;
+        text-align: center;
+        margin-top: .5px;
+    }
+
+    .promo {
+        font-size: .7rem;
+        text-shadow: 1px 1px 5px rgba(0, 0, 1, 1);
+
+    }
+
+    /* Image container centered below promo */
+    .image-container1 {
+        width: 100%;
+        text-align: center;
+        margin-top: 1rem; /* Adds space above the image */
+    }
+
+    .meatinboard {
+        position: relative;
+        width: 100%; /* Adjust size dynamically */
+        max-width: 10rem; /* Prevent it from being too large */
+        text-align: center;
+        transform: translateY(50%); /* Adjust positioning */
+        left: 0; /* Remove any left offset */
+        margin-top: 0.5rem; /* Reduced space above the image */
+        z-index: 1000; /* Ensure image stays below footer */
+    }
+}
+
+@media (max-width: 360px) {
+    #home-content1 {
+        position: relative;
+        text-align: center;
+        padding: 0 0.5rem; /* Reduce padding */
+        max-width: 100%;
+        margin: 0;
+        height: auto; /* Allow height to adjust dynamically */
+        justify-content: center;
+        margin-top: -5%; /* Reduced margin to move content up */
+    }
+
+    .Enjoy {
+        font-size: 0.8rem; /* Reduce font size */
+        text-align: center;
+        margin: 0.3rem 0; /* Compact spacing */
+    }
+
+    .logo1_1 {
+        max-width: 12rem; /* Reduce logo size */
+        margin-top: 0; /* Remove unnecessary margin */
+    }
+
+    .logo-container {
+        margin: 0; /* Remove unnecessary margins */
+    }
+
+    /* Stack promo and image-container1 vertically */
+    .container-1 {
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        text-align: center;
+        gap: 5px; /* Reduce gap between items */
+        margin-top: -5%; /* Reduced margin to move content up */
+    }
+
+    .promo-container {
+        width: 100%;
+        text-align: center;
+        margin: 0.5rem 0; /* Compact spacing */
+    }
+
+    .promo {
+        font-size: 0.8rem; /* Reduce font size */
+        padding: 0.3rem; /* Reduce padding */
+        margin: 0.3rem 0; /* Compact spacing */
+        text-shadow: none; /* Remove text shadow for simplicity */
+    }
+
+    /* Image container centered below promo */
+    .image-container1 {
+        width: 100%;
+        text-align: center;
+        margin: 0.5rem 0; /* Compact spacing */
+    }
+
+    .meatinboard {
+        position: relative;
+        width: 80%; /* Adjust size dynamically */
+        max-width: 8rem; /* Reduce max size */
+        text-align: center;
+        transform: none; /* Remove unnecessary transformations */
+        margin: 0.3rem auto; /* Reduced space above the image */
+        z-index: 1; /* Ensure proper stacking */
+    }
+}
+
